@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:paddingStart="18dp"
+    android:paddingEnd="18dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textColor="@color/text_primary"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="@string/subtitle"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/vibrationSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/vibe"
+            android:textColor="@color/text_secondary"
+            app:useMaterialThemeColors="false"
+            app:thumbTint="@color/switch_thumb"
+            app:trackTint="@color/switch_track" />
+    </LinearLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginTop="18dp"
+        android:background="@drawable/bg_tab"
+        app:tabIndicator="@drawable/tab_indicator"
+        app:tabIndicatorFullWidth="true"
+        app:tabTextColor="@color/tab_text"
+        app:tabSelectedTextColor="@color/accent" />
+
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textColor="@color/accent"
+        android:textSize="13sp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="6dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/patternsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="4dp"
+            android:paddingBottom="14dp" />
+    </ScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/stopButton"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:layout_marginBottom="18dp"
+        android:enabled="false"
+        android:text="@string/stop"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/stop_button"
+        app:cornerRadius="16dp" />
+
+</LinearLayout>

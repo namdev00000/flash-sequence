@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Flash Dance</string>
+    <string name="subtitle">Flash patterns • simple &amp; rhythmic</string>
+    <string name="vibe">VIBE</string>
+    <string name="dance_vibe">DANCE + VIBE</string>
+    <string name="flash_only">FLASH ONLY</string>
+    <string name="stop">STOP</string>
+    <string name="ready">READY</string>
+    <string name="playing_format">PLAYING • %1$s</string>
+    <string name="no_flash">This device does not have a usable camera flash.</string>
+    <string name="camera_permission_granted">Camera permission granted. Tap a pattern to start.</string>
+    <string name="camera_permission_required">Camera permission is required to control the flash.</string>
+</resources>
