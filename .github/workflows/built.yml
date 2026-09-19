@@ -5,11 +5,6 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 
-# Directs GitHub Actions to execute commands inside the project subfolder
-defaults:
-  run:
-    working-directory: FlashDance
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -22,17 +17,16 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-          cache: gradle
 
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
-
-      - name: Build debug APK
-        run: ./gradlew assembleDebug
+      # This sets up the Gradle environment and automatically runs the build
+      - name: Setup and Build with Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          build-root-directory: FlashDance
+          arguments: assembleDebug
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
           name: flash-dance-debug-apk
-          # We specify the subfolder path so the runner finds the compiled binary
           path: FlashDance/app/build/outputs/apk/debug/app-debug.apk
