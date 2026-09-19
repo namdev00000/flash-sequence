@@ -5,6 +5,11 @@ on:
     branches: [ "main" ]
   workflow_dispatch:
 
+# This tells GitHub to run all commands inside the FlashDance folder
+defaults:
+  run:
+    working-directory: FlashDance
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -29,4 +34,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: flash-dance-debug-apk
-          path: app/build/outputs/apk/debug/app-debug.apk
+          # We point to the project subfolder to find the finished APK
+          path: FlashDance/app/build/outputs/apk/debug/app-debug.apk
