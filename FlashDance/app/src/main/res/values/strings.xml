@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Flash Dance</string>
+    <string name="vibration_label">Vibration</string>
+    <string name="status_idle">Idle</string>
+    <string name="tab_combo">DANCE + VIBE</string>
+    <string name="tab_flash_only">FLASH ONLY</string>
+    <string name="stop">STOP</string>
+    <string name="no_flash_message">This device has no flashlight. Vibration-only patterns will still work.</string>
+</resources>
