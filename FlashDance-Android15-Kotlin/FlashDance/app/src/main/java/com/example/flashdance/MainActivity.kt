@@ -129,24 +129,37 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun setupTabs() {
-        tabLayout.addTab(tabLayout.newTab().setText(R.string.dance_vibe))
-        tabLayout.addTab(tabLayout.newTab().setText(R.string.flash_only))
+    tabLayout.addTab(
+        tabLayout.newTab().setText(R.string.dance_vibe)
+    )
 
-        tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-            override fun onTabSelected(tab: TabLayout.Tab) {
+    tabLayout.addTab(
+        tabLayout.newTab().setText(R.string.flash_only)
+    )
+
+    tabLayout.addOnTabSelectedListener(
+        object : TabLayout.OnTabSelectedListener {
+
+            override fun onTabSelected(tab: TabLayout.Tab?) {
                 stopPattern()
-                if (tab.position == 0) {
+
+                if (tab?.position == 0) {
                     renderPatterns(dancePatterns)
                 } else {
                     renderPatterns(flashPatterns)
                 }
             }
 
-            override fun onTabUnselected(tab: TabLayout.Tab) = Unit
-            override fun onTabReselected(tab: Tab) = Unit
-        })
-    }
+            override fun onTabUnselected(tab: TabLayout.Tab?) {
+                // Nothing needed here
+            }
 
+            override fun onTabReselected(tab: TabLayout.Tab?) {
+                // Nothing needed here
+            }
+        }
+    )
+}
     private fun renderPatterns(patterns: List<Pattern>) {
         patternsContainer.removeAllViews()
 
